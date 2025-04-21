@@ -1,8 +1,12 @@
+// Load environment variables
+require("dotenv").config();
 const process = require("node:process");
 const twilio = require("twilio");
 
-
-const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
-
+// Initialize Twilio client with credentials from .env
+const client = twilio(
+  process.env.TWILIO_SID,
+  process.env.TWILIO_TOKEN
+);
 
 module.exports = client;
